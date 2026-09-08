@@ -1,0 +1,15 @@
+{
+  "simulation_seconds": 20.000000000000327,
+  "motors": 16,
+  "max_closure_error_m": 0.00010750423674748298,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "output/revised-telemetry.csv"
+}

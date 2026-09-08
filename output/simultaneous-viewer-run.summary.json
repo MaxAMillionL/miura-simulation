@@ -1,0 +1,15 @@
+{
+  "simulation_seconds": 8.139999999999871,
+  "motors": 16,
+  "max_closure_error_m": 0.00014040119681727286,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "output/simultaneous-viewer-run.csv"
+}

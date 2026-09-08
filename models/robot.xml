@@ -1,0 +1,484 @@
+<mujoco model="four_panel_miura">
+  <compiler angle="radian" meshdir="meshes" autolimits="true" />
+  <option timestep="0.001" integrator="implicitfast" iterations="150" tolerance="1e-10">
+    <flag filterparent="disable" />
+  </option>
+  <visual>
+    <global offwidth="1200" offheight="900" />
+  </visual>
+  <asset>
+    <mesh name="wheel" file="wheel.obj" />
+    <mesh name="motor" file="motor.obj" />
+    <mesh name="frame_0" file="frame_0.obj" />
+    <mesh name="core_0" file="core_0.obj" />
+    <mesh name="p0_m0_gear" file="p0_m0_gear.obj" />
+    <mesh name="p0_m0_original_coupler" file="p0_m0_original_coupler.obj" />
+    <mesh name="p0_m1_gear" file="p0_m1_gear.obj" />
+    <mesh name="p0_m1_original_coupler" file="p0_m1_original_coupler.obj" />
+    <mesh name="p0_m2_gear" file="p0_m2_gear.obj" />
+    <mesh name="p0_m2_original_coupler" file="p0_m2_original_coupler.obj" />
+    <mesh name="p0_m3_gear" file="p0_m3_gear.obj" />
+    <mesh name="p0_m3_original_coupler" file="p0_m3_original_coupler.obj" />
+    <mesh name="frame_1" file="frame_1.obj" />
+    <mesh name="core_1" file="core_1.obj" />
+    <mesh name="p1_m0_gear" file="p1_m0_gear.obj" />
+    <mesh name="p1_m0_original_coupler" file="p1_m0_original_coupler.obj" />
+    <mesh name="p1_m1_gear" file="p1_m1_gear.obj" />
+    <mesh name="p1_m1_original_coupler" file="p1_m1_original_coupler.obj" />
+    <mesh name="p1_m2_gear" file="p1_m2_gear.obj" />
+    <mesh name="p1_m2_original_coupler" file="p1_m2_original_coupler.obj" />
+    <mesh name="p1_m3_gear" file="p1_m3_gear.obj" />
+    <mesh name="p1_m3_original_coupler" file="p1_m3_original_coupler.obj" />
+    <mesh name="frame_2" file="frame_2.obj" />
+    <mesh name="core_2" file="core_2.obj" />
+    <mesh name="p2_m0_gear" file="p2_m0_gear.obj" />
+    <mesh name="p2_m0_original_coupler" file="p2_m0_original_coupler.obj" />
+    <mesh name="p2_m1_gear" file="p2_m1_gear.obj" />
+    <mesh name="p2_m1_original_coupler" file="p2_m1_original_coupler.obj" />
+    <mesh name="p2_m2_gear" file="p2_m2_gear.obj" />
+    <mesh name="p2_m2_original_coupler" file="p2_m2_original_coupler.obj" />
+    <mesh name="p2_m3_gear" file="p2_m3_gear.obj" />
+    <mesh name="p2_m3_original_coupler" file="p2_m3_original_coupler.obj" />
+    <mesh name="frame_3" file="frame_3.obj" />
+    <mesh name="core_3" file="core_3.obj" />
+    <mesh name="p3_m0_gear" file="p3_m0_gear.obj" />
+    <mesh name="p3_m0_original_coupler" file="p3_m0_original_coupler.obj" />
+    <mesh name="p3_m1_gear" file="p3_m1_gear.obj" />
+    <mesh name="p3_m1_original_coupler" file="p3_m1_original_coupler.obj" />
+    <mesh name="p3_m2_gear" file="p3_m2_gear.obj" />
+    <mesh name="p3_m2_original_coupler" file="p3_m2_original_coupler.obj" />
+    <mesh name="p3_m3_gear" file="p3_m3_gear.obj" />
+    <mesh name="p3_m3_original_coupler" file="p3_m3_original_coupler.obj" />
+  </asset>
+  <worldbody>
+    <light pos="0 -0.2 1" dir="0 0 -1" diffuse=".9 .9 .9" />
+    <geom name="floor" type="plane" size="2 2 .1" rgba=".16 .19 .24 1" contype="1" conaffinity="0" />
+    <body name="panel_0" pos="0 0 .2">
+      <freejoint name="base" />
+      <body name="panel_1">
+        <joint name="fold_1" axis="0.5 0.8660254038 0" damping="0.005" armature=".00001" limited="true" range="-1.5 1.5" />
+        <body name="panel_2">
+          <joint name="fold_2" axis="-1 1.224646799e-16 0" damping="0.005" armature=".00001" limited="true" range="-1.5 1.5" />
+          <body name="panel_3">
+            <joint name="fold_3" axis="0.5 -0.8660254038 0" damping="0.005" armature=".00001" limited="true" range="-1.5 1.5" />
+            <geom name="panel_visual_3" type="mesh" mesh="frame_3" rgba=".66 .48 .83 1" mass="0" contype="0" conaffinity="0" group="1" />
+            <inertial pos="0.1125000022 -0.06495190238 9.536743166e-10" mass="0.12" diaginertia="0.000225 0.000225 0.00045" />
+            <geom name="panel_ground_3" type="mesh" mesh="frame_3" mass="0" group="3" rgba="1 0 0 0" contype="0" conaffinity="1" />
+            <geom name="panel_collision_3" type="mesh" mesh="core_3" mass="0" group="3" rgba="1 0 0 0" contype="16" conaffinity="14" friction="0.9 .002 .0001" />
+            <body name="p3_m0_drive" pos="0.0369999991 -0.02199999931 1.025015409e-09">
+              <joint name="p3_m0" axis="1 -1.892219381e-09 0" damping=".000002" armature=".000002" limited="false" />
+              <geom name="p3_m0_gear_visual" type="mesh" mesh="p3_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m0_idler_drive" pos="0.03699999912 -0.01099999931 1.025015409e-09">
+              <joint name="p3_m0_idler" axis="1 -1.892219381e-09 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m0_idler_gear_visual" type="mesh" mesh="p3_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m0_output_drive" pos="0.03699999914 6.895472104e-10 1.025015409e-09">
+              <joint name="p3_m0_output" axis="1 -1.892219381e-09 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m0_output_gear_visual" type="mesh" mesh="p3_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+              <geom name="p3_m0_coupler" type="mesh" mesh="p3_m0_original_coupler" rgba=".66 .48 .83 1" mass=".0003" contype="0" conaffinity="0" />
+              <geom name="p3_m0_wheel" type="mesh" mesh="wheel" pos="0.009 -1.702997443e-11 0" quat="-0.7071067805 0 0 0.7071067819" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+              <geom name="p3_m0_tire" type="cylinder" pos="0.009 -1.702997443e-11 0" quat="0.7071067812 1.338001156e-09 0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            </body>
+            <geom name="p3_m0_motor_housing" type="mesh" mesh="motor" pos="0.0563999991 -0.02199999935 1.025015409e-09" quat="1 0 0 -9.461096223e-10" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+            <geom name="p3_m0_motor_collision" type="box" pos="0.0563999991 -0.02199999935 1.025015409e-09" quat="1 0 0 -9.461096223e-10" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            <body pos="0.0563999991 -0.02199999935 1.025015409e-09">
+              <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+            </body>
+            <site name="interlock_3_0_19.65" pos="0.05664999914 6.523651059e-10 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+            <site name="interlock_3_0_56.35" pos="0.09334999914 5.829206344e-10 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+            <body name="p3_m1_drive" pos="0.07555255889 -0.08686087063 1.025715242e-09">
+              <joint name="p3_m1" axis="-0.5 0.8660254038 0" damping=".000002" armature=".000002" limited="false" />
+              <geom name="p3_m1_gear_visual" type="mesh" mesh="p3_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m1_idler_drive" pos="0.06602627944 -0.09236087063 1.025715242e-09">
+              <joint name="p3_m1_idler" axis="-0.5 0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m1_idler_gear_visual" type="mesh" mesh="p3_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m1_output_drive" pos="0.0565 -0.09786087063 1.025715242e-09">
+              <joint name="p3_m1_output" axis="-0.5 0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m1_output_gear_visual" type="mesh" mesh="p3_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+              <geom name="p3_m1_coupler" type="mesh" mesh="p3_m1_original_coupler" rgba=".66 .48 .83 1" mass=".0003" contype="0" conaffinity="0" />
+              <geom name="p3_m1_wheel" type="mesh" mesh="wheel" pos="-0.0045 0.007794228634 0" quat="0.9659258263 0 0 0.2588190451" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+              <geom name="p3_m1_tire" type="cylinder" pos="-0.0045 0.007794228634 0" quat="0.7071067812 -0.6123724357 -0.3535533906 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            </body>
+            <geom name="p3_m1_motor_housing" type="mesh" mesh="motor" pos="0.06585255889 -0.07005997779 1.025715242e-09" quat="0.5 0 0 0.8660254038" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+            <geom name="p3_m1_motor_collision" type="box" pos="0.06585255889 -0.07005997779 1.025715242e-09" quat="0.5 0 0 0.8660254038" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            <body pos="0.06585255889 -0.07005997779 1.025715242e-09">
+              <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+            </body>
+            <site name="interlock_3_1_19.65" pos="0.046675 -0.08084347144 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+            <site name="interlock_3_1_56.35" pos="0.028325 -0.04906033912 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+            <body name="p3_m2_drive" pos="0.1494474412 -0.04304293998 1.025715081e-09">
+              <joint name="p3_m2" axis="0.5 -0.8660254038 0" damping=".000002" armature=".000002" limited="false" />
+              <geom name="p3_m2_gear_visual" type="mesh" mesh="p3_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m2_idler_drive" pos="0.1589737206 -0.03754293998 1.025715081e-09">
+              <joint name="p3_m2_idler" axis="0.5 -0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m2_idler_gear_visual" type="mesh" mesh="p3_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m2_output_drive" pos="0.1685 -0.03204293998 1.025715081e-09">
+              <joint name="p3_m2_output" axis="0.5 -0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m2_output_gear_visual" type="mesh" mesh="p3_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+              <geom name="p3_m2_coupler" type="mesh" mesh="p3_m2_original_coupler" rgba=".66 .48 .83 1" mass=".0003" contype="0" conaffinity="0" />
+              <geom name="p3_m2_wheel" type="mesh" mesh="wheel" pos="0.0045 -0.007794228634 0" quat="-0.2588190451 0 0 0.9659258263" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+              <geom name="p3_m2_tire" type="cylinder" pos="0.0045 -0.007794228634 0" quat="0.7071067812 0.6123724357 0.3535533906 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            </body>
+            <geom name="p3_m2_motor_housing" type="mesh" mesh="motor" pos="0.1591474412 -0.05984383281 1.025715081e-09" quat="0.8660254038 0 0 -0.5" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+            <geom name="p3_m2_motor_collision" type="box" pos="0.1591474412 -0.05984383281 1.025715081e-09" quat="0.8660254038 0 0 -0.5" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            <body pos="0.1591474412 -0.05984383281 1.025715081e-09">
+              <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+            </body>
+            <body name="p3_m3_drive" pos="0.1879999996 -0.1079038105 1.025860599e-09">
+              <joint name="p3_m3" axis="-1 1.892219381e-09 0" damping=".000002" armature=".000002" limited="false" />
+              <geom name="p3_m3_gear_visual" type="mesh" mesh="p3_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m3_idler_drive" pos="0.1879999996 -0.1189038105 1.025860599e-09">
+              <joint name="p3_m3_idler" axis="-1 1.892219381e-09 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m3_idler_gear_visual" type="mesh" mesh="p3_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            </body>
+            <body name="p3_m3_output_drive" pos="0.1879999995 -0.1299038105 1.025860599e-09">
+              <joint name="p3_m3_output" axis="-1 1.892219381e-09 0" damping=".000002" armature=".0000003" limited="false" />
+              <geom name="p3_m3_output_gear_visual" type="mesh" mesh="p3_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+              <geom name="p3_m3_coupler" type="mesh" mesh="p3_m3_original_coupler" rgba=".66 .48 .83 1" mass=".0003" contype="0" conaffinity="0" />
+              <geom name="p3_m3_wheel" type="mesh" mesh="wheel" pos="-0.009 1.702997443e-11 0" quat="0.7071067819 0 0 0.7071067805" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+              <geom name="p3_m3_tire" type="cylinder" pos="-0.009 1.702997443e-11 0" quat="0.7071067812 -1.338001156e-09 -0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            </body>
+            <geom name="p3_m3_motor_housing" type="mesh" mesh="motor" pos="0.1685999996 -0.1079038104 1.025860599e-09" quat="9.461096223e-10 0 0 1" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+            <geom name="p3_m3_motor_collision" type="box" pos="0.1685999996 -0.1079038104 1.025860599e-09" quat="9.461096223e-10 0 0 1" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="16" conaffinity="15" friction="0.9 .002 .0001" />
+            <body pos="0.1685999996 -0.1079038104 1.025860599e-09">
+              <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+            </body>
+            <site name="closure_3" pos="0.15 0 0" size=".002" rgba="1 .1 .1 0" group="4" />
+          </body>
+          <geom name="panel_visual_2" type="mesh" mesh="frame_2" rgba=".45 .73 .48 1" mass="0" contype="0" conaffinity="0" group="1" />
+          <inertial pos="-0.03750000223 -0.06495190819 9.536743166e-10" mass="0.12" diaginertia="0.000225 0.000225 0.00045" />
+          <geom name="panel_ground_2" type="mesh" mesh="frame_2" mass="0" group="3" rgba="1 0 0 0" contype="0" conaffinity="1" />
+          <geom name="panel_collision_2" type="mesh" mesh="core_2" mass="0" group="3" rgba="1 0 0 0" contype="8" conaffinity="22" friction="0.9 .002 .0001" />
+          <body name="p2_m0_drive" pos="0.0380000009 -0.1079038113 1.025015409e-09">
+            <joint name="p2_m0" axis="-1 1.892219492e-09 0" damping=".000002" armature=".000002" limited="false" />
+            <geom name="p2_m0_gear_visual" type="mesh" mesh="p2_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m0_idler_drive" pos="0.03800000088 -0.1189038113 1.025015409e-09">
+            <joint name="p2_m0_idler" axis="-1 1.892219492e-09 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m0_idler_gear_visual" type="mesh" mesh="p2_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m0_output_drive" pos="0.03800000086 -0.1299038113 1.025015409e-09">
+            <joint name="p2_m0_output" axis="-1 1.892219492e-09 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m0_output_gear_visual" type="mesh" mesh="p2_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            <geom name="p2_m0_coupler" type="mesh" mesh="p2_m0_original_coupler" rgba=".45 .73 .48 1" mass=".0003" contype="0" conaffinity="0" />
+            <geom name="p2_m0_wheel" type="mesh" mesh="wheel" pos="-0.009 1.702997543e-11 0" quat="0.7071067819 0 0 0.7071067805" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+            <geom name="p2_m0_tire" type="cylinder" pos="-0.009 1.702997543e-11 0" quat="0.7071067812 -1.338001234e-09 -0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          </body>
+          <geom name="p2_m0_motor_housing" type="mesh" mesh="motor" pos="0.0186000009 -0.1079038112 1.025015409e-09" quat="9.461096362e-10 0 0 1" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+          <geom name="p2_m0_motor_collision" type="box" pos="0.0186000009 -0.1079038112 1.025015409e-09" quat="9.461096362e-10 0 0 1" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          <body pos="0.0186000009 -0.1079038112 1.025015409e-09">
+            <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+          </body>
+          <body name="p2_m1_drive" pos="-0.0005525588852 -0.04304293994 1.025715242e-09">
+            <joint name="p2_m1" axis="0.5 -0.8660254038 0" damping=".000002" armature=".000002" limited="false" />
+            <geom name="p2_m1_gear_visual" type="mesh" mesh="p2_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m1_idler_drive" pos="0.008973720556 -0.03754293994 1.025715242e-09">
+            <joint name="p2_m1_idler" axis="0.5 -0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m1_idler_gear_visual" type="mesh" mesh="p2_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m1_output_drive" pos="0.0185 -0.03204293994 1.025715242e-09">
+            <joint name="p2_m1_output" axis="0.5 -0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m1_output_gear_visual" type="mesh" mesh="p2_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            <geom name="p2_m1_coupler" type="mesh" mesh="p2_m1_original_coupler" rgba=".45 .73 .48 1" mass=".0003" contype="0" conaffinity="0" />
+            <geom name="p2_m1_wheel" type="mesh" mesh="wheel" pos="0.0045 -0.007794228634 0" quat="-0.2588190451 0 0 0.9659258263" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+            <geom name="p2_m1_tire" type="cylinder" pos="0.0045 -0.007794228634 0" quat="0.7071067812 0.6123724357 0.3535533906 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          </body>
+          <geom name="p2_m1_motor_housing" type="mesh" mesh="motor" pos="0.009147441115 -0.05984383277 1.025715242e-09" quat="0.8660254038 0 0 -0.5" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+          <geom name="p2_m1_motor_collision" type="box" pos="0.009147441115 -0.05984383277 1.025715242e-09" quat="0.8660254038 0 0 -0.5" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          <body pos="0.009147441115 -0.05984383277 1.025715242e-09">
+            <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+          </body>
+          <site name="interlock_2_1_19.65" pos="0.028325 -0.04906033913 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+          <site name="interlock_2_1_56.35" pos="0.046675 -0.08084347144 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+          <body name="p2_m2_drive" pos="-0.07444744116 -0.08686087059 1.025715081e-09">
+            <joint name="p2_m2" axis="-0.5 0.8660254038 0" damping=".000002" armature=".000002" limited="false" />
+            <geom name="p2_m2_gear_visual" type="mesh" mesh="p2_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m2_idler_drive" pos="-0.0839737206 -0.09236087059 1.025715081e-09">
+            <joint name="p2_m2_idler" axis="-0.5 0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m2_idler_gear_visual" type="mesh" mesh="p2_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m2_output_drive" pos="-0.09350000004 -0.09786087059 1.025715081e-09">
+            <joint name="p2_m2_output" axis="-0.5 0.8660254038 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m2_output_gear_visual" type="mesh" mesh="p2_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            <geom name="p2_m2_coupler" type="mesh" mesh="p2_m2_original_coupler" rgba=".45 .73 .48 1" mass=".0003" contype="0" conaffinity="0" />
+            <geom name="p2_m2_wheel" type="mesh" mesh="wheel" pos="-0.0045 0.007794228634 0" quat="0.9659258263 0 0 0.2588190451" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+            <geom name="p2_m2_tire" type="cylinder" pos="-0.0045 0.007794228634 0" quat="0.7071067812 -0.6123724357 -0.3535533906 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          </body>
+          <geom name="p2_m2_motor_housing" type="mesh" mesh="motor" pos="-0.08414744116 -0.07005997776 1.025715081e-09" quat="0.5 0 0 0.8660254038" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+          <geom name="p2_m2_motor_collision" type="box" pos="-0.08414744116 -0.07005997776 1.025715081e-09" quat="0.5 0 0 0.8660254038" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          <body pos="-0.08414744116 -0.07005997776 1.025715081e-09">
+            <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+          </body>
+          <body name="p2_m3_drive" pos="-0.1129999996 -0.0220000001 1.025860599e-09">
+            <joint name="p2_m3" axis="1 -1.892219492e-09 0" damping=".000002" armature=".000002" limited="false" />
+            <geom name="p2_m3_gear_visual" type="mesh" mesh="p2_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m3_idler_drive" pos="-0.1129999996 -0.0110000001 1.025860599e-09">
+            <joint name="p2_m3_idler" axis="1 -1.892219492e-09 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m3_idler_gear_visual" type="mesh" mesh="p2_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          </body>
+          <body name="p2_m3_output_drive" pos="-0.1129999995 -9.667230927e-11 1.025860599e-09">
+            <joint name="p2_m3_output" axis="1 -1.892219492e-09 0" damping=".000002" armature=".0000003" limited="false" />
+            <geom name="p2_m3_output_gear_visual" type="mesh" mesh="p2_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+            <geom name="p2_m3_coupler" type="mesh" mesh="p2_m3_original_coupler" rgba=".45 .73 .48 1" mass=".0003" contype="0" conaffinity="0" />
+            <geom name="p2_m3_wheel" type="mesh" mesh="wheel" pos="0.009 -1.702997543e-11 0" quat="-0.7071067805 0 0 0.7071067819" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+            <geom name="p2_m3_tire" type="cylinder" pos="0.009 -1.702997543e-11 0" quat="0.7071067812 1.338001234e-09 0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          </body>
+          <geom name="p2_m3_motor_housing" type="mesh" mesh="motor" pos="-0.09359999959 -0.02200000013 1.025860599e-09" quat="1 0 0 -9.461096362e-10" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+          <geom name="p2_m3_motor_collision" type="box" pos="-0.09359999959 -0.02200000013 1.025860599e-09" quat="1 0 0 -9.461096362e-10" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="8" conaffinity="23" friction="0.9 .002 .0001" />
+          <body pos="-0.09359999959 -0.02200000013 1.025860599e-09">
+            <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+          </body>
+          <site name="interlock_2_3_19.65" pos="-0.09334999955 -1.338544209e-10 1.025860599e-09" size=".001" rgba="0 0 0 0" group="4" />
+          <site name="interlock_2_3_56.35" pos="-0.05664999955 -2.032988853e-10 1.025860599e-09" size=".001" rgba="0 0 0 0" group="4" />
+        </body>
+        <geom name="panel_visual_1" type="mesh" mesh="frame_1" rgba=".95 .55 .22 1" mass="0" contype="0" conaffinity="0" group="1" />
+        <inertial pos="-0.03750000143 0.06495190271 9.536743166e-10" mass="0.12" diaginertia="0.000225 0.000225 0.00045" />
+        <geom name="panel_ground_1" type="mesh" mesh="frame_1" mass="0" group="3" rgba="1 0 0 0" contype="0" conaffinity="1" />
+        <geom name="panel_collision_1" type="mesh" mesh="core_1" mass="0" group="3" rgba="1 0 0 0" contype="4" conaffinity="26" friction="0.9 .002 .0001" />
+        <body name="p1_m0_drive" pos="0.03744744216 0.1088608711 1.025015409e-09">
+          <joint name="p1_m0" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".000002" limited="false" />
+          <geom name="p1_m0_gear_visual" type="mesh" mesh="p1_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m0_idler_drive" pos="0.04697372159 0.103360871 1.025015409e-09">
+          <joint name="p1_m0_idler" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m0_idler_gear_visual" type="mesh" mesh="p1_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m0_output_drive" pos="0.05650000103 0.09786087103 1.025015409e-09">
+          <joint name="p1_m0_output" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m0_output_gear_visual" type="mesh" mesh="p1_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          <geom name="p1_m0_coupler" type="mesh" mesh="p1_m0_original_coupler" rgba=".95 .55 .22 1" mass=".0003" contype="0" conaffinity="0" />
+          <geom name="p1_m0_wheel" type="mesh" mesh="wheel" pos="-0.004500000015 -0.007794228626 0" quat="0.258819046 0 0 0.965925826" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+          <geom name="p1_m0_tire" type="cylinder" pos="-0.004500000015 -0.007794228626 0" quat="0.7071067812 0.612372435 -0.3535533918 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        </body>
+        <geom name="p1_m0_motor_housing" type="mesh" mesh="motor" pos="0.02774744213 0.09205997825 1.025015409e-09" quat="-0.4999999992 0 0 0.8660254043" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+        <geom name="p1_m0_motor_collision" type="box" pos="0.02774744213 0.09205997825 1.025015409e-09" quat="-0.4999999992 0 0 0.8660254043" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        <body pos="0.02774744213 0.09205997825 1.025015409e-09">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+        </body>
+        <site name="interlock_1_0_19.65" pos="0.04667500099 0.08084347186 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+        <site name="interlock_1_0_56.35" pos="0.02832500093 0.04906033958 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+        <body name="p1_m1_drive" pos="-0.038 0.1079038106 1.025715242e-09">
+          <joint name="p1_m1" axis="1 -1.224646799e-16 0" damping=".000002" armature=".000002" limited="false" />
+          <geom name="p1_m1_gear_visual" type="mesh" mesh="p1_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m1_idler_drive" pos="-0.038 0.1189038106 1.025715242e-09">
+          <joint name="p1_m1_idler" axis="1 -1.224646799e-16 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m1_idler_gear_visual" type="mesh" mesh="p1_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m1_output_drive" pos="-0.038 0.1299038106 1.025715242e-09">
+          <joint name="p1_m1_output" axis="1 -1.224646799e-16 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m1_output_gear_visual" type="mesh" mesh="p1_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          <geom name="p1_m1_coupler" type="mesh" mesh="p1_m1_original_coupler" rgba=".95 .55 .22 1" mass=".0003" contype="0" conaffinity="0" />
+          <geom name="p1_m1_wheel" type="mesh" mesh="wheel" pos="0.009 -1.102182119e-18 0" quat="-0.7071067812 0 0 0.7071067812" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+          <geom name="p1_m1_tire" type="cylinder" pos="0.009 -1.102182119e-18 0" quat="0.7071067812 8.659560562e-17 0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        </body>
+        <geom name="p1_m1_motor_housing" type="mesh" mesh="motor" pos="-0.0186 0.1079038106 1.025715242e-09" quat="1 0 0 -1.693940481e-16" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+        <geom name="p1_m1_motor_collision" type="box" pos="-0.0186 0.1079038106 1.025715242e-09" quat="1 0 0 -1.693940481e-16" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        <body pos="-0.0186 0.1079038106 1.025715242e-09">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+        </body>
+        <body name="p1_m2_drive" pos="-0.03700000005 0.02199999998 1.025715081e-09">
+          <joint name="p1_m2" axis="-1 1.224646799e-16 0" damping=".000002" armature=".000002" limited="false" />
+          <geom name="p1_m2_gear_visual" type="mesh" mesh="p1_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m2_idler_drive" pos="-0.03700000005 0.01099999998 1.025715081e-09">
+          <joint name="p1_m2_idler" axis="-1 1.224646799e-16 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m2_idler_gear_visual" type="mesh" mesh="p1_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m2_output_drive" pos="-0.03700000005 -1.688919839e-11 1.025715081e-09">
+          <joint name="p1_m2_output" axis="-1 1.224646799e-16 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m2_output_gear_visual" type="mesh" mesh="p1_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          <geom name="p1_m2_coupler" type="mesh" mesh="p1_m2_original_coupler" rgba=".95 .55 .22 1" mass=".0003" contype="0" conaffinity="0" />
+          <geom name="p1_m2_wheel" type="mesh" mesh="wheel" pos="-0.009 1.102182119e-18 0" quat="0.7071067812 0 0 0.7071067812" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+          <geom name="p1_m2_tire" type="cylinder" pos="-0.009 1.102182119e-18 0" quat="0.7071067812 -8.659560562e-17 -0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        </body>
+        <geom name="p1_m2_motor_housing" type="mesh" mesh="motor" pos="-0.05640000005 0.02199999998 1.025715081e-09" quat="-5.265055687e-17 0 0 1" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+        <geom name="p1_m2_motor_collision" type="box" pos="-0.05640000005 0.02199999998 1.025715081e-09" quat="-5.265055687e-17 0 0 1" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        <body pos="-0.05640000005 0.02199999998 1.025715081e-09">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+        </body>
+        <site name="interlock_1_2_19.65" pos="-0.05665000005 -1.688919599e-11 1.025715081e-09" size=".001" rgba="0 0 0 0" group="4" />
+        <site name="interlock_1_2_56.35" pos="-0.09335000005 -1.688919149e-11 1.025715081e-09" size=".001" rgba="0 0 0 0" group="4" />
+        <body name="p1_m3_drive" pos="-0.1124474408 0.02104294025 1.025860599e-09">
+          <joint name="p1_m3" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".000002" limited="false" />
+          <geom name="p1_m3_gear_visual" type="mesh" mesh="p1_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m3_idler_drive" pos="-0.1219737203 0.02654294026 1.025860599e-09">
+          <joint name="p1_m3_idler" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m3_idler_gear_visual" type="mesh" mesh="p1_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        </body>
+        <body name="p1_m3_output_drive" pos="-0.1314999997 0.03204294028 1.025860599e-09">
+          <joint name="p1_m3_output" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+          <geom name="p1_m3_output_gear_visual" type="mesh" mesh="p1_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+          <geom name="p1_m3_coupler" type="mesh" mesh="p1_m3_original_coupler" rgba=".95 .55 .22 1" mass=".0003" contype="0" conaffinity="0" />
+          <geom name="p1_m3_wheel" type="mesh" mesh="wheel" pos="0.004500000015 0.007794228626 0" quat="0.965925826 0 0 -0.258819046" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+          <geom name="p1_m3_tire" type="cylinder" pos="0.004500000015 0.007794228626 0" quat="0.7071067812 -0.612372435 0.3535533918 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        </body>
+        <geom name="p1_m3_motor_housing" type="mesh" mesh="motor" pos="-0.1027474408 0.03784383306 1.025860599e-09" quat="0.8660254043 0 0 0.4999999992" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+        <geom name="p1_m3_motor_collision" type="box" pos="-0.1027474408 0.03784383306 1.025860599e-09" quat="0.8660254043 0 0 0.4999999992" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="4" conaffinity="27" friction="0.9 .002 .0001" />
+        <body pos="-0.1027474408 0.03784383306 1.025860599e-09">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+        </body>
+      </body>
+      <geom name="panel_visual_0" type="mesh" mesh="frame_0" rgba=".2 .65 .78 1" mass="0" contype="0" conaffinity="0" group="1" />
+      <inertial pos="0.1125000014 0.06495190786 9.536743166e-10" mass="0.12" diaginertia="0.000225 0.000225 0.00045" />
+      <geom name="panel_ground_0" type="mesh" mesh="frame_0" mass="0" group="3" rgba="1 0 0 0" contype="0" conaffinity="1" />
+      <geom name="panel_collision_0" type="mesh" mesh="core_0" mass="0" group="3" rgba="1 0 0 0" contype="2" conaffinity="28" friction="0.9 .002 .0001" />
+      <body name="p0_m0_drive" pos="0.03755255784 0.02104293951 1.025015409e-09">
+        <joint name="p0_m0" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".000002" limited="false" />
+        <geom name="p0_m0_gear_visual" type="mesh" mesh="p0_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m0_idler_drive" pos="0.02802627841 0.02654293952 1.025015409e-09">
+        <joint name="p0_m0_idler" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m0_idler_gear_visual" type="mesh" mesh="p0_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m0_output_drive" pos="0.01849999897 0.03204293954 1.025015409e-09">
+        <joint name="p0_m0_output" axis="0.5000000016 0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m0_output_gear_visual" type="mesh" mesh="p0_m0_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        <geom name="p0_m0_coupler" type="mesh" mesh="p0_m0_original_coupler" rgba=".2 .65 .78 1" mass=".0003" contype="0" conaffinity="0" />
+        <geom name="p0_m0_wheel" type="mesh" mesh="wheel" pos="0.004500000015 0.007794228626 0" quat="0.965925826 0 0 -0.258819046" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+        <geom name="p0_m0_tire" type="cylinder" pos="0.004500000015 0.007794228626 0" quat="0.7071067812 -0.612372435 0.3535533918 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      </body>
+      <geom name="p0_m0_motor_housing" type="mesh" mesh="motor" pos="0.04725255787 0.03784383232 1.025015409e-09" quat="0.8660254043 0 0 0.4999999992" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+      <geom name="p0_m0_motor_collision" type="box" pos="0.04725255787 0.03784383232 1.025015409e-09" quat="0.8660254043 0 0 0.4999999992" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      <body pos="0.04725255787 0.03784383232 1.025015409e-09">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+      </body>
+      <site name="interlock_0_0_19.65" pos="0.02832499901 0.04906033871 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+      <site name="interlock_0_0_56.35" pos="0.04667499907 0.08084347099 1.025015409e-09" size=".001" rgba="0 0 0 0" group="4" />
+      <body name="p0_m1_drive" pos="0.113 0.022 1.025715242e-09">
+        <joint name="p0_m1" axis="-1 0 0" damping=".000002" armature=".000002" limited="false" />
+        <geom name="p0_m1_gear_visual" type="mesh" mesh="p0_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m1_idler_drive" pos="0.113 0.011 1.025715242e-09">
+        <joint name="p0_m1_idler" axis="-1 0 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m1_idler_gear_visual" type="mesh" mesh="p0_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m1_output_drive" pos="0.113 2.268444099e-12 1.025715242e-09">
+        <joint name="p0_m1_output" axis="-1 0 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m1_output_gear_visual" type="mesh" mesh="p0_m1_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        <geom name="p0_m1_coupler" type="mesh" mesh="p0_m1_original_coupler" rgba=".2 .65 .78 1" mass=".0003" contype="0" conaffinity="0" />
+        <geom name="p0_m1_wheel" type="mesh" mesh="wheel" pos="-0.009 0 0" quat="0.7071067812 0 0 0.7071067812" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+        <geom name="p0_m1_tire" type="cylinder" pos="-0.009 0 0" quat="0.7071067812 0 -0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      </body>
+      <geom name="p0_m1_motor_housing" type="mesh" mesh="motor" pos="0.0936 0.022 1.025715242e-09" quat="1.430716806e-16 0 0 1" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+      <geom name="p0_m1_motor_collision" type="box" pos="0.0936 0.022 1.025715242e-09" quat="1.430716806e-16 0 0 1" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      <body pos="0.0936 0.022 1.025715242e-09">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+      </body>
+      <site name="interlock_0_1_19.65" pos="0.09335 2.268444099e-12 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+      <site name="interlock_0_1_56.35" pos="0.05665 2.268444099e-12 1.025715242e-09" size=".001" rgba="0 0 0 0" group="4" />
+      <body name="p0_m2_drive" pos="0.1120000001 0.1079038106 1.025715081e-09">
+        <joint name="p0_m2" axis="1 0 0" damping=".000002" armature=".000002" limited="false" />
+        <geom name="p0_m2_gear_visual" type="mesh" mesh="p0_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m2_idler_drive" pos="0.1120000001 0.1189038106 1.025715081e-09">
+        <joint name="p0_m2_idler" axis="1 0 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m2_idler_gear_visual" type="mesh" mesh="p0_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m2_output_drive" pos="0.1120000001 0.1299038106 1.025715081e-09">
+        <joint name="p0_m2_output" axis="1 0 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m2_output_gear_visual" type="mesh" mesh="p0_m2_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        <geom name="p0_m2_coupler" type="mesh" mesh="p0_m2_original_coupler" rgba=".2 .65 .78 1" mass=".0003" contype="0" conaffinity="0" />
+        <geom name="p0_m2_wheel" type="mesh" mesh="wheel" pos="0.009 0 0" quat="0.7071067812 0 0 -0.7071067812" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+        <geom name="p0_m2_tire" type="cylinder" pos="0.009 0 0" quat="0.7071067812 0 0.7071067812 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      </body>
+      <geom name="p0_m2_motor_housing" type="mesh" mesh="motor" pos="0.1314000001 0.1079038106 1.025715081e-09" quat="1 0 0 7.897292436e-17" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+      <geom name="p0_m2_motor_collision" type="box" pos="0.1314000001 0.1079038106 1.025715081e-09" quat="1 0 0 7.897292436e-17" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      <body pos="0.1314000001 0.1079038106 1.025715081e-09">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+      </body>
+      <body name="p0_m3_drive" pos="0.1874474408 0.1088608703 1.025860599e-09">
+        <joint name="p0_m3" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".000002" limited="false" />
+        <geom name="p0_m3_gear_visual" type="mesh" mesh="p0_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m3_idler_drive" pos="0.1969737203 0.1033608703 1.025860599e-09">
+        <joint name="p0_m3_idler" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m3_idler_gear_visual" type="mesh" mesh="p0_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+      </body>
+      <body name="p0_m3_output_drive" pos="0.2064999997 0.09786087029 1.025860599e-09">
+        <joint name="p0_m3_output" axis="-0.5000000016 -0.8660254028 0" damping=".000002" armature=".0000003" limited="false" />
+        <geom name="p0_m3_output_gear_visual" type="mesh" mesh="p0_m3_gear" rgba=".73 .76 .8 1" mass="0.002" contype="0" conaffinity="0" />
+        <geom name="p0_m3_coupler" type="mesh" mesh="p0_m3_original_coupler" rgba=".2 .65 .78 1" mass=".0003" contype="0" conaffinity="0" />
+        <geom name="p0_m3_wheel" type="mesh" mesh="wheel" pos="-0.004500000015 -0.007794228626 0" quat="0.258819046 0 0 0.965925826" rgba=".12 .13 .15 1" mass="0" contype="0" conaffinity="0" />
+        <geom name="p0_m3_tire" type="cylinder" pos="-0.004500000015 -0.007794228626 0" quat="0.7071067812 0.612372435 -0.3535533918 0" size=".008 .002" mass="0.003" rgba=".12 .13 .15 0" group="3" condim="4" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      </body>
+      <geom name="p0_m3_motor_housing" type="mesh" mesh="motor" pos="0.1777474408 0.09205997751 1.025860599e-09" quat="-0.4999999992 0 0 0.8660254043" mass="0" rgba=".28 .3 .33 1" contype="0" conaffinity="0" />
+      <geom name="p0_m3_motor_collision" type="box" pos="0.1777474408 0.09205997751 1.025860599e-09" quat="-0.4999999992 0 0 0.8660254043" size=".0186 .006 .005" mass="0" rgba="0 0 0 0" group="3" contype="2" conaffinity="29" friction="0.9 .002 .0001" />
+      <body pos="0.1777474408 0.09205997751 1.025860599e-09">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="0.0000002 0.0000012 0.0000012" />
+      </body>
+      <site name="closure_0" pos="0.15 0 0" size=".002" rgba="1 .1 .1 0" group="4" />
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="p0_m0_idler_transmission" joint1="p0_m0_idler" joint2="p0_m0" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p0_m0_output_transmission" joint1="p0_m0_output" joint2="p0_m0" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p0_m1_idler_transmission" joint1="p0_m1_idler" joint2="p0_m1" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p0_m1_output_transmission" joint1="p0_m1_output" joint2="p0_m1" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p0_m2_idler_transmission" joint1="p0_m2_idler" joint2="p0_m2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p0_m2_output_transmission" joint1="p0_m2_output" joint2="p0_m2" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p0_m3_idler_transmission" joint1="p0_m3_idler" joint2="p0_m3" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p0_m3_output_transmission" joint1="p0_m3_output" joint2="p0_m3" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p1_m0_idler_transmission" joint1="p1_m0_idler" joint2="p1_m0" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p1_m0_output_transmission" joint1="p1_m0_output" joint2="p1_m0" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p1_m1_idler_transmission" joint1="p1_m1_idler" joint2="p1_m1" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p1_m1_output_transmission" joint1="p1_m1_output" joint2="p1_m1" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p1_m2_idler_transmission" joint1="p1_m2_idler" joint2="p1_m2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p1_m2_output_transmission" joint1="p1_m2_output" joint2="p1_m2" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p1_m3_idler_transmission" joint1="p1_m3_idler" joint2="p1_m3" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p1_m3_output_transmission" joint1="p1_m3_output" joint2="p1_m3" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p2_m0_idler_transmission" joint1="p2_m0_idler" joint2="p2_m0" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p2_m0_output_transmission" joint1="p2_m0_output" joint2="p2_m0" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p2_m1_idler_transmission" joint1="p2_m1_idler" joint2="p2_m1" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p2_m1_output_transmission" joint1="p2_m1_output" joint2="p2_m1" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p2_m2_idler_transmission" joint1="p2_m2_idler" joint2="p2_m2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p2_m2_output_transmission" joint1="p2_m2_output" joint2="p2_m2" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p2_m3_idler_transmission" joint1="p2_m3_idler" joint2="p2_m3" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p2_m3_output_transmission" joint1="p2_m3_output" joint2="p2_m3" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p3_m0_idler_transmission" joint1="p3_m0_idler" joint2="p3_m0" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p3_m0_output_transmission" joint1="p3_m0_output" joint2="p3_m0" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p3_m1_idler_transmission" joint1="p3_m1_idler" joint2="p3_m1" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p3_m1_output_transmission" joint1="p3_m1_output" joint2="p3_m1" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p3_m2_idler_transmission" joint1="p3_m2_idler" joint2="p3_m2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p3_m2_output_transmission" joint1="p3_m2_output" joint2="p3_m2" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p3_m3_idler_transmission" joint1="p3_m3_idler" joint2="p3_m3" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p3_m3_output_transmission" joint1="p3_m3_output" joint2="p3_m3" polycoef="0 1.0 0 0 0" solref=".002 1" />
+    <joint name="p0_m0_panel_coupling" joint1="p0_m0_output" joint2="fold_1" polycoef="0 1 0 0 0" solref=".002 1" />
+    <joint name="p0_m1_panel_coupling" joint1="p0_m1_output" joint2="fold_2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p1_m0_panel_coupling" joint1="p1_m0_output" joint2="fold_1" polycoef="0 1 0 0 0" solref=".002 1" />
+    <joint name="p1_m2_panel_coupling" joint1="p1_m2_output" joint2="fold_2" polycoef="0 1 0 0 0" solref=".002 1" />
+    <joint name="p2_m1_panel_coupling" joint1="p2_m1_output" joint2="fold_3" polycoef="0 1 0 0 0" solref=".002 1" />
+    <joint name="p2_m3_panel_coupling" joint1="p2_m3_output" joint2="fold_2" polycoef="0 1 0 0 0" solref=".002 1" />
+    <joint name="p3_m0_panel_coupling" joint1="p3_m0_output" joint2="fold_2" polycoef="0 -1 0 0 0" solref=".002 1" />
+    <joint name="p3_m1_panel_coupling" joint1="p3_m1_output" joint2="fold_3" polycoef="0 1 0 0 0" solref=".002 1" />
+    <connect name="fourth_crease" site1="closure_0" site2="closure_3" solref=".005 1" />
+  </equality>
+  <actuator>
+    <motor name="p0_m0" joint="p0_m0" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p0_m1" joint="p0_m1" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p0_m2" joint="p0_m2" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p0_m3" joint="p0_m3" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p1_m0" joint="p1_m0" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p1_m1" joint="p1_m1" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p1_m2" joint="p1_m2" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p1_m3" joint="p1_m3" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p2_m0" joint="p2_m0" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p2_m1" joint="p2_m1" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p2_m2" joint="p2_m2" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p2_m3" joint="p2_m3" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p3_m0" joint="p3_m0" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p3_m1" joint="p3_m1" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p3_m2" joint="p3_m2" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+    <motor name="p3_m3" joint="p3_m3" gear="0.8" ctrllimited="true" ctrlrange="-0.08 0.08" />
+  </actuator>
+</mujoco>

@@ -1,0 +1,20 @@
+{
+  "simulation_seconds": 20.000000000000327,
+  "motors": 16,
+  "max_closure_error_m": 5.291816287363667e-05,
+  "final_fold_rad": [
+    -0.00018970775220415346,
+    -4.646096960673691e-05,
+    -0.0001646909465933291
+  ],
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "output/motor-control-verification.csv"
+}

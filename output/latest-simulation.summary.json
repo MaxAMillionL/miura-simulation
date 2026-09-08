@@ -1,0 +1,15 @@
+{
+  "simulation_seconds": 0.25000000000000006,
+  "motors": 16,
+  "max_closure_error_m": 0.00013767551116276047,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "output/latest-simulation.csv"
+}

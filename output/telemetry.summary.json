@@ -1,0 +1,15 @@
+{
+  "simulation_seconds": 20.00000000000146,
+  "motors": 16,
+  "max_closure_error_m": 0.00010343887840614507,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "/Users/yash/miura-robot/output/telemetry.csv"
+}

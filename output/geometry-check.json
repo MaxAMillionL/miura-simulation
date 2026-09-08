@@ -1,0 +1,305 @@
+{
+  "checked": "Actual frame, motor, gear and wheel solids. Existing mating profiles and circular bearing seats are reported separately; no added connector geometry.",
+  "interlock_region_radius_mm": 6.3,
+  "interlock_region_axial_half_length_mm": 2,
+  "bearing_region_radius_mm": 5.1,
+  "bearing_region_axial_half_length_mm": 1.6,
+  "limitation": "Interlocks use ideal revolute joints, not resolved tooth contact or elastic deformation.",
+  "samples": [
+    {
+      "fold_rad": 0,
+      "pairs": [
+        {
+          "panels": [
+            0,
+            1
+          ],
+          "total_overlap_mm3": 0.00013104181238611179,
+          "interlock_region_overlap_mm3": 0.00013104181238611179,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            2
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            3
+          ],
+          "total_overlap_mm3": 8.293796173749399e-05,
+          "interlock_region_overlap_mm3": 8.293796173749399e-05,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            2
+          ],
+          "total_overlap_mm3": 3.651897058228106e-05,
+          "interlock_region_overlap_mm3": 3.651897058228106e-05,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            3
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            2,
+            3
+          ],
+          "total_overlap_mm3": 2.8209903618573227e-05,
+          "interlock_region_overlap_mm3": 2.8209903618573227e-05,
+          "outside_interlock_overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "fold_rad": 0.3,
+      "pairs": [
+        {
+          "panels": [
+            0,
+            1
+          ],
+          "total_overlap_mm3": 0.09008212973625382,
+          "interlock_region_overlap_mm3": 0.09008212973625382,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            2
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            3
+          ],
+          "total_overlap_mm3": 0.17600751457623443,
+          "interlock_region_overlap_mm3": 0.17600751457623443,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            2
+          ],
+          "total_overlap_mm3": 0.17598740009274164,
+          "interlock_region_overlap_mm3": 0.17598740009274164,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            3
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            2,
+            3
+          ],
+          "total_overlap_mm3": 0.08997990469017057,
+          "interlock_region_overlap_mm3": 0.08997990469017057,
+          "outside_interlock_overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "fold_rad": 0.55,
+      "pairs": [
+        {
+          "panels": [
+            0,
+            1
+          ],
+          "total_overlap_mm3": 0.06559878379785442,
+          "interlock_region_overlap_mm3": 0.06559877959158758,
+          "outside_interlock_overlap_mm3": 4.206266832605141e-09
+        },
+        {
+          "panels": [
+            0,
+            2
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            3
+          ],
+          "total_overlap_mm3": 0.047469437071399466,
+          "interlock_region_overlap_mm3": 0.047469437071399466,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            2
+          ],
+          "total_overlap_mm3": 0.04749158366881259,
+          "interlock_region_overlap_mm3": 0.04749158366881259,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            3
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            2,
+            3
+          ],
+          "total_overlap_mm3": 0.06550423643176448,
+          "interlock_region_overlap_mm3": 0.06550423636331992,
+          "outside_interlock_overlap_mm3": 6.84445557225145e-11
+        }
+      ]
+    },
+    {
+      "fold_rad": 0.9,
+      "pairs": [
+        {
+          "panels": [
+            0,
+            1
+          ],
+          "total_overlap_mm3": 0.1775507236910788,
+          "interlock_region_overlap_mm3": 0.17754774682270888,
+          "outside_interlock_overlap_mm3": 2.97686836992794e-06
+        },
+        {
+          "panels": [
+            0,
+            2
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            3
+          ],
+          "total_overlap_mm3": 0.11083379154073608,
+          "interlock_region_overlap_mm3": 0.11083379154073608,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            2
+          ],
+          "total_overlap_mm3": 0.11086256781251133,
+          "interlock_region_overlap_mm3": 0.11086256781251133,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            3
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            2,
+            3
+          ],
+          "total_overlap_mm3": 0.17741158863925324,
+          "interlock_region_overlap_mm3": 0.17741158863925324,
+          "outside_interlock_overlap_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "fold_rad": 1.2,
+      "pairs": [
+        {
+          "panels": [
+            0,
+            1
+          ],
+          "total_overlap_mm3": 0.1752703375628391,
+          "interlock_region_overlap_mm3": 0.1752660102812446,
+          "outside_interlock_overlap_mm3": 4.327281594499273e-06
+        },
+        {
+          "panels": [
+            0,
+            2
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            0,
+            3
+          ],
+          "total_overlap_mm3": 0.17994175067828092,
+          "interlock_region_overlap_mm3": 0.17994175067828092,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            1,
+            2
+          ],
+          "total_overlap_mm3": 0.17996028131773553,
+          "interlock_region_overlap_mm3": 0.17996012678686416,
+          "outside_interlock_overlap_mm3": 1.5453087137545382e-07
+        },
+        {
+          "panels": [
+            1,
+            3
+          ],
+          "total_overlap_mm3": 0.0,
+          "interlock_region_overlap_mm3": 0.0,
+          "outside_interlock_overlap_mm3": 0.0
+        },
+        {
+          "panels": [
+            2,
+            3
+          ],
+          "total_overlap_mm3": 0.17518384807072784,
+          "interlock_region_overlap_mm3": 0.17518227918962456,
+          "outside_interlock_overlap_mm3": 1.568881103284954e-06
+        }
+      ]
+    }
+  ]
+}

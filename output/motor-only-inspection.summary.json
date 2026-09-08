@@ -1,0 +1,20 @@
+{
+  "simulation_seconds": 18.070000000000025,
+  "motors": 16,
+  "max_closure_error_m": 0.00028703140236178206,
+  "final_fold_rad": [
+    -1.2923186222670837,
+    -0.7211456342586039,
+    -1.292311775629438
+  ],
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "log": "output/motor-only-inspection.csv"
+}
