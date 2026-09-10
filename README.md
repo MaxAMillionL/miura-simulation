@@ -8,7 +8,7 @@ Open Terminal and run:
 
 ```bash
 cd ~/miura-robot
-how
+.venv/bin/mjpython -m miura_robot.run --viewer --paused --seconds 600
 ```
 
 The window starts paused. Press **P** to run physics, then use the controls below. You can also double-click `Launch-Simulation.command` in Finder. Mouse drag orbits the camera and scroll zooms; close the window to finish.

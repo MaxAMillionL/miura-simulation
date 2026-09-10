@@ -1,7 +1,12 @@
 {
-  "simulation_seconds": 20.00000000000146,
+  "simulation_seconds": 9.999999999999831,
   "motors": 16,
-  "max_closure_error_m": 0.00010343887840614507,
+  "max_closure_error_m": 4.4140616586284865e-05,
+  "final_fold_rad": [
+    1.5027632343360982,
+    0.8739787122745423,
+    1.502751415811689
+  ],
   "warnings": [
     0,
     0,
@@ -11,5 +16,5 @@
     0,
     0
   ],
-  "log": "/Users/yash/miura-robot/output/telemetry.csv"
+  "log": "C:\\Users\\maxwe\\VSCode\\Miura_Simulation\\miura-robot\\output\\telemetry.csv"
 }
